@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <p>Enter the required health parameters to predict the likelihood of heart disease.</p>
+        
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label>Age:</label>
+                <span class="description">Enter your age (e.g., 45)</span>
+                <input type="number" name="age" placeholder="Example: 45" required>
+            </div>
+
+            <div class="form-group">
+                <label>Sex:</label>
+                <span class="description">Select your gender</span>
+                <select name="sex">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Chest Pain Type:</label>
+                <span class="description">Type of chest pain experienced</span>
+                <select name="chest_pain_type">
+                    <option value="0">Typical Angina</option>
+                    <option value="1">Atypical Angina</option>
+                    <option value="2">Non-anginal Pain</option>
+                    <option value="3">Asymptomatic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Resting Blood Pressure (mm Hg):</label>
+                <span class="description">Your blood pressure while resting (e.g., 130)</span>
+                <input type="number" name="resting_blood_pressure" placeholder="Example: 130" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cholesterol Level (mg/dl):</label>
+                <span class="description">Serum cholesterol level (e.g., 200)</span>
+                <input type="number" name="cholesterol" placeholder="Example: 200" required>
+            </div>
+
+            <div class="form-group">
+                <label>Fasting Blood Sugar (>120 mg/dl):</label>
+                <span class="description">Is your fasting blood sugar greater than 120 mg/dl?</span>
+                <select name="fasting_blood_sugar">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Resting ECG Results:</label>
+                <span class="description">Resting electrocardiographic results</span>
+                <select name="resting_electrocardiogram">
+                    <option value="0">Normal</option>
+                    <option value="1">ST-T Wave Abnormality</option>
+                    <option value="2">Left Ventricular Hypertrophy</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Max Heart Rate Achieved:</label>
+                <span class="description">Maximum heart rate (e.g., 170)</span>
+                <input type="number" name="max_heart_rate_achieved" placeholder="Example: 170" required>
+            </div>
+
+            <div class="form-group">
+                <label>Exercise-Induced Angina:</label>
+                <span class="description">Did you experience angina during exercise?</span>
+                <select name="exercise_induced_angina">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>ST Depression (Oldpeak):</label>
+                <span class="description">ST depression during exercise (e.g., 1.5)</span>
+                <input type="number" name="st_depression" step="0.1" placeholder="Example: 1.5" required>
+            </div>
+
+            <div class="form-group">
+                <label>ST Slope:</label>
+                <span class="description">Slope of peak exercise ST segment</span>
+                <select name="st_slope">
+                    <option value="0">Upsloping</option>
+                    <option value="1">Flat</option>
+                    <option value="2">Downsloping</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Number of Major Vessels (0-3):</label>
+                <span class="description">Number of major blood vessels (e.g., 2)</span>
+                <input type="number" name="ca" placeholder="Example: 2" required>
+            </div>
+
+            <div class="form-group">
+                <label>Thalassemia Type:</label>
+                <span class="description">Blood disorder type</span>
+                <select name="thal">
+                    <option value="1">Normal</option>
+                    <option value="2">Fixed Defect</option>
+                    <option value="3">Reversible Defect</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
