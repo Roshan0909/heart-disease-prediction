@@ -42,7 +42,11 @@ X_test = scaler.transform(X_test)
 model = LogisticRegression(random_state=42)
 model.fit(X_train, y_train)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
+def landing():
+    return render_template('landing.html')
+
+@app.route('/forms', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         try:
